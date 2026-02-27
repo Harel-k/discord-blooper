@@ -1,0 +1,76 @@
+{
+  "id": "roblox_standard_v1",
+  "name": "Roblox / Gaming Standard",
+  "language": "EN",
+  "roles": [
+    { "key": "owner", "name": "Owner", "color": "#f1c40f", "permPack": "owner", "hoist": true },
+    { "key": "admin", "name": "Admin", "color": "#e74c3c", "permPack": "admin", "hoist": true },
+    { "key": "mod", "name": "Mod", "color": "#3498db", "permPack": "mod", "hoist": true },
+    { "key": "helper", "name": "Helper", "color": "#2ecc71", "permPack": "helper", "hoist": false },
+
+    { "key": "verified", "name": "Verified", "color": "#95a5a6", "permPack": "verified", "hoist": false },
+    { "key": "member", "name": "Member", "color": "#9b59b6", "permPack": "member", "hoist": false },
+
+    { "key": "ping_events", "name": "Events Ping", "color": "#e67e22", "permPack": "ping", "mentionable": true },
+    { "key": "ping_giveaways", "name": "Giveaways Ping", "color": "#1abc9c", "permPack": "ping", "mentionable": true }
+  ],
+  "categories": [
+    {
+      "key": "info",
+      "name": "📌 INFO",
+      "channels": [
+        { "type": "text", "key": "rules", "name": "rules", "topic": "Read the rules and stay safe." },
+        { "type": "text", "key": "announcements", "name": "announcements", "topic": "Important news & updates." },
+        { "type": "text", "key": "roles", "name": "roles", "topic": "Pick roles (pings, games, region)." }
+      ],
+      "overwrites": [
+        { "target": "@everyone", "deny": ["SendMessages"] }
+      ]
+    },
+    {
+      "key": "community",
+      "name": "💬 COMMUNITY",
+      "channels": [
+        { "type": "text", "key": "chat", "name": "chat", "topic": "Talk here.", "slowmode": 0 },
+        { "type": "text", "key": "media", "name": "media", "topic": "Screenshots, clips, creations." },
+        { "type": "text", "key": "suggestions", "name": "suggestions", "topic": "Suggest ideas." }
+      ]
+    },
+    {
+      "key": "support",
+      "name": "🆘 SUPPORT",
+      "channels": [
+        { "type": "text", "key": "help", "name": "help", "topic": "Ask for help." },
+        { "type": "text", "key": "bug_reports", "name": "bug-reports", "topic": "Report bugs." }
+      ]
+    },
+    {
+      "key": "staff",
+      "name": "🛡️ STAFF",
+      "channels": [
+        { "type": "text", "key": "staff_chat", "name": "staff-chat", "topic": "Staff only." },
+        { "type": "text", "key": "mod_logs", "name": "mod-logs", "topic": "Logs and moderation notes." }
+      ],
+      "overwrites": [
+        { "target": "@everyone", "deny": ["ViewChannel"] },
+        { "targetRoleKey": "helper", "allow": ["ViewChannel", "SendMessages", "ReadMessageHistory"] },
+        { "targetRoleKey": "mod", "allow": ["ViewChannel", "SendMessages", "ReadMessageHistory"] },
+        { "targetRoleKey": "admin", "allow": ["ViewChannel", "SendMessages", "ReadMessageHistory"] }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "channelKey": "rules",
+      "type": "embed",
+      "title": "Server Rules",
+      "description": "1) Be respectful\n2) No scams\n3) No NSFW\n4) No spam\n5) Listen to staff\n\n✅ React in #roles to get access."
+    },
+    {
+      "channelKey": "announcements",
+      "type": "embed",
+      "title": "Welcome!",
+      "description": "Announcements will be posted here. Turn on notifications if you want pings."
+    }
+  ]
+}
